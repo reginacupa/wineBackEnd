@@ -28,16 +28,14 @@ itens=[
         "preco": "259.23",
         "avaliacao": 8.8,
         "categoria": "Cabernet Sauavignon",
-        "quantidade": 25,
-        "imagem": "https://cdn.mistral.com.br/products/35015/img_m_35015.png"},
+        "quantidade": 25},
 
     {   "nome": "Montes Alpha",
         "descricao": "Verdadeiro clássico da América do Sul, o Montes Alpha foi o primeiro grande tinto chileno, inspirado nos melhores vinhos de Bordeaux.  Um vinho excelente, de imbatível relação qualidade/preço",
         "preco": "259.23",
         "avaliacao": 8.8,
         "categoria": "Cabernet Sauavignon",
-        "quantidade": 25,
-        "imagem": "https://cdn.mistral.com.br/products/35015/img_m_35015.png"},
+        "quantidade": 25},
 
     {
             "nome": "Alamos",
@@ -45,8 +43,7 @@ itens=[
             "preco": "113.32",
             "avaliacao": 7.8,
             "categoria": "Malbec",
-            "quantidade": 40,
-            "imagem": "https://cdn.mistral.com.br/products/35378/img_m_35378.png"},
+            "quantidade": 40},
 
     {
             "nome": "Angélica Zapata",
@@ -54,8 +51,7 @@ itens=[
             "preco": "268.08",
             "avaliacao": 8.4,
             "categoria": "Merlot",
-            "quantidade": 15,
-            "imagem": "https://cdn.mistral.com.br/products/35203/img_m_35203.png"},
+            "quantidade": 15},
 
     {
             "nome": "Catena",
@@ -63,8 +59,7 @@ itens=[
             "preco": "187.38",
             "avaliacao": 8.3,
             "categoria": "Malbec",
-            "quantidade": 28,
-            "imagem": "https://cdn.mistral.com.br/products/34423/img_m_34423.png" },
+            "quantidade": 28},
 
     {
             "nome": "Caymus",
@@ -72,8 +67,7 @@ itens=[
             "preco": "1326.01",
             "avaliacao": 9.2,
             "categoria": "Cabernet Sauavignon",
-            "quantidade": 17,
-            "imagem": "https://cdn.mistral.com.br/products/34736/img_m_34736.png"},
+            "quantidade": 17},
 
     {
             "nome": "Vaze Feliz Shiraz",
@@ -81,8 +75,7 @@ itens=[
             "preco": "364.25",
             "avaliacao": 8.5,
             "categoria": "Cabernet Sauavignon",
-            "quantidade": 29,
-            "imagem":"https://cdn.mistral.com.br/products/34136/img_m_34136.jpg"}
+            "quantidade": 29}
     ]
 
 for item in itens:
@@ -92,8 +85,7 @@ for item in itens:
         preco=item['preco'],
         avaliacao=item['avaliacao'],
         categoria=item['categoria'],
-        quantidade=item['quantidade'],
-        imagem=item['imagem'],
+        quantidade=item['quantidade']
     )
     session.add(novo_item)
 session.commit()
