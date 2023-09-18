@@ -8,11 +8,10 @@ class ProdutoSchema(BaseModel):
     """
     nome: str = "Montes Alpha - Cabernet Sauavignon"
     descricao:  str = "Verdadeiro clássico da América do Sul, o Montes Alpha foi o primeiro grande tinto chileno, inspirado nos melhores vinhos de Bordeaux.  Um vinho excelente, de imbatível relação qualidade/preço"
-    preco: float =  "259.23"
+    preco: float = "259.23"
     avaliacao: float = 8.8
     categoria: str = "Cabernet Sauavignon"
     quantidade:  int = 25
-
 
 
 class ProdutoViewSchema(BaseModel):
@@ -24,9 +23,8 @@ class ProdutoViewSchema(BaseModel):
     preco: float = 259.23
     avaliacao: float = 8.8
     categoria: str = "Cabernet Sauavignon"
-    quantidade: Optional [int] = 25
+    quantidade: Optional[int] = 25
 
-    
 
 class ProdutoBuscaSchema(BaseModel):
     """ Define como deve ser a estrutura que representa a busca. Que será
@@ -41,6 +39,16 @@ class ListagemProdutosSchema(BaseModel):
     produtos: List[ProdutoViewSchema]
 
 
+class ProdutoUpdateSchema(BaseModel):
+    """ Define como um novo produto a ser inserido deve ser representado
+    """
+    nome: str = "Montes Alpha - Cabernet Sauavignon"
+    descricao:  str = "Verdadeiro clássico da América do Sul, o Montes Alpha foi o primeiro grande tinto chileno, inspirado nos melhores vinhos de Bordeaux.  Um vinho excelente, de imbatível relação qualidade/preço"
+    preco: float = "259.23"
+    avaliacao: float = 8.8
+    categoria: str = "Cabernet Sauavignon"
+    quantidade:  int = 25
+
 
 def apresenta_produtos(produtos: List[Produto]):
     """ Retorna uma representação do produto seguindo o schema definido em
@@ -50,8 +58,8 @@ def apresenta_produtos(produtos: List[Produto]):
     for produto in produtos:
         result.append({
             "id": produto.id,
-            "nome":produto.nome,
-            "descricao":produto.descricao,
+            "nome": produto.nome,
+            "descricao": produto.descricao,
             "preco": produto.preco,
             "avaliacao": produto.avaliacao,
             "categoria": produto.categoria,
@@ -60,7 +68,6 @@ def apresenta_produtos(produtos: List[Produto]):
         })
 
     return {"produtos": result}
-
 
 
 class ProdutoBuscaPorIDSchema(BaseModel):
@@ -77,13 +84,13 @@ class ProdutoBuscaPorNomeSchema(BaseModel):
     termo: str = "Malbec"
 
 
-
 class ProdutoDelSchema(BaseModel):
     """ Define como deve ser a estrutura do dado retornado após uma requisição
         de remoção.
     """
     mesage: str = "Produto removido com sucesso"
-    nome: str
+    id: int = "1"
+
 
 def apresenta_produto(produto: Produto):
     """ Retorna uma representação do produto seguindo o schema definido em
@@ -97,6 +104,6 @@ def apresenta_produto(produto: Produto):
         "preco": produto.preco,
         "avaliacao": produto.avaliacao,
         "categoria": produto.categoria,
-        "quantidade": produto.quantidade   
+        "quantidade": produto.quantidade
 
     }

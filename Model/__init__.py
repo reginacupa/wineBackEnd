@@ -21,6 +21,10 @@ if not database_exists(db_url):
     create_database(db_url)
 
 Base.metadata.create_all(engine)
+
+'''
+
+
 session=Session()
 itens=[   
     {   "nome": "Montes Alpha",
@@ -28,7 +32,10 @@ itens=[
         "preco": "259.23",
         "avaliacao": 8.8,
         "categoria": "Cabernet Sauavignon",
-        "quantidade": 25},
+        "quantidade": 25,
+        "image": "https://cdn.mistral.com.br/products/35015/img_m_35015.png"
+
+        },
 
     
     {
@@ -37,7 +44,10 @@ itens=[
         "preco": "113.32",
         "avaliacao": 7.8,
         "categoria": "Malbec",
-        "quantidade": 40},
+        "quantidade": 40,
+        "image": "https://cdn.mistral.com.br/products/35800/img_m_35800.png"
+
+        },
 
     {
         "nome": "Angélica Zapata",
@@ -45,7 +55,10 @@ itens=[
         "preco": "268.08",
         "avaliacao": 8.4,
         "categoria": "Merlot",
-        "quantidade": 15},
+        "quantidade": 15,
+        "image":"https://cdn.mistral.com.br/products/35455/img_m_35455.png"
+
+        },
 
     {
         "nome": "Catena",
@@ -53,7 +66,10 @@ itens=[
         "preco": "187.38",
         "avaliacao": 8.3,
         "categoria": "Malbec",
-        "quantidade": 28},
+        "quantidade": 28,
+        "image":"https://www.mistral.com.br/especiais/malbec-argentino/images/wine.jpeg"
+        
+        },
 
     {
         "nome": "Caymus",
@@ -61,7 +77,9 @@ itens=[
         "preco": "1326.01",
         "avaliacao": 9.2,
         "categoria": "Cabernet Sauavignon",
-        "quantidade": 17},
+        "quantidade": 17,
+        "image": "https://cdn.mistral.com.br/products/34736/img_m_34736.png"
+        },
 
     {
         "nome": "Vaze Feliz Shiraz",
@@ -69,7 +87,10 @@ itens=[
         "preco": "364.25",
         "avaliacao": 8.5,
         "categoria": "Cabernet Sauavignon",
-        "quantidade": 29}
+        "quantidade": 29,
+        "image":"https://cdn.mistral.com.br/products/34136/img_m_34136.jpg"
+        
+        }
     ]
 
 for item in itens:
@@ -83,6 +104,8 @@ for item in itens:
     )
     session.add(novo_item)
 session.commit()
+
+'''
 
 
 
