@@ -5,8 +5,8 @@ from urllib.parse import unquote
 from sqlalchemy.exc import IntegrityError
 
 from Model import Produto, Session
-
-from Schema import ProdutoBuscaPorIDSchema, ProdutoBuscaPorNomeSchema, ProdutoBuscaSchema, ProdutoDelSchema, ProdutoSchema, ProdutoViewSchema, apresenta_produto, apresenta_produtos, ListagemProdutosSchema
+from logger import logger
+from Schema import*
 from Schema import ErrorSchema
 
 from flask_cors import CORS
@@ -19,6 +19,7 @@ CORS(app)
 
 #Definindo as tags
 home_tag = Tag(name="Documentação", description = "Descrição de documentação: Swagger")
+
 produto_tag = Tag(name = "Produto", description = "Cadastro, visualização e remoção de produtos à base")
 
 @app.get('/', tags = [home_tag])
@@ -34,13 +35,19 @@ def get_produtos():
     """Faz a busca por todos os produtos cadastrados
     Retorna uma apresentação da listagem de produtos."""
 
+    logger.info(f"Coletando produtos ")
+    # criando conexão com a base
     session = Session()
+    # fazendo a busca
     produtos = session.query(Produto).all()
-    if not produtos:
+    
+    if not Produto:
         #se não há produtos cadastrados
         return {"produtos": []}, 200
     else:
-        return apresenta_produtos(Produto), 200
+        logger.info(f"%d produtos encontrados" % len(produtos))
+        # retorna a representação de produto
+        return apresenta_produtos(produtos), 200
     
 
 
@@ -52,30 +59,40 @@ def add_produto(form: ProdutoSchema):
     """Retorna uma apresentação dos produtos"""
 
     print(form)
-    produto = Produto(
+    produto = Produto (
         nome=form.nome,
         descricao=form.descricao,
         preco=form.preco,
         avaliacao=form.avaliacao,
         categoria=form.categoria,
-        quantidade=form.quantidade,
-        imagem=form.imagem
+        quantidade=form.quantidade
     )
+    logger.info(f"Adicionando produto de nome: '{produto.nome}'")
 
     try:
-        
-        session = Session 
+        # criando conexão com a base
+        session = Session()
+        # adicionando produto
         session.add(produto)
+        # efetivando o camando de adição de novo item na tabela
         session.commit()
+        logger.info("Adicionado produto: %s"% produto)
         return apresenta_produto(produto), 200
+        
     
     except Exception as e:
     #caso erro fora do previsto
-        return{"Não foi possível salvar novo item  :/"}, 400
+        error_msg = "Não foi possível cadastrar novo item  :("
+        logger.warning(f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
+        return {"mesage": error_msg}, 400
 
     except IntegrityError as e:
-    #duplicidade do nome é a provavel razão do IntegrityError
-        return  {"Produto de mesmo nome e marca já salvo na base :( "}, 409
+        #duplicidade do nome é a provavel razão do IntegrityError
+        error_msg = "Produto de mesmo nome e categoria já salvo na base  :/ "
+        logger.warning(f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
+        return {"mesage": error_msg}, 409
+        
+        
 
     
 
@@ -86,33 +103,46 @@ def get_produtoId(query: ProdutoBuscaPorIDSchema):
     """Faz uma busca por um produto a partir do id do produto
     Retorna uma apresentação dos produtos."""
     produto_id = query.id
+    logger.info(f"Coletando dados sobre produto #{produto_id}")
+    # criando conexão com a base
+    session = Session()
+    # fazendo a busca
+    produto = session.query(Produto).filter(Produto.id == produto_id).first()
+
     if not Produto:
+        # se o produto não foi encontrado
         error_msg = "Produto não encontrado na base :( "
+        logger.warning(f"Erro ao buscar produto '{produto_id}', {error_msg}")
         return {"mesage": error_msg}, 404
     else:
+        logger.info("Produto econtrado: %s" % produto)
+        # retorna a representação de produto
         return apresenta_produto(Produto), 200
     
 
-@app.delete('/delete/<int:id>', tags=[produto_tag],
+@app.delete('/delete', tags=[produto_tag],
             responses= {"200": ProdutoDelSchema, "404": ErrorSchema})
-def del_produto(query: ProdutoBuscaPorIDSchema):
-    """Deleta um produto a partir do Id informado
+def del_produto(query: ProdutoBuscaPorNomeSchema):
+    """Deleta um produto a partir do nome informado
     Retorna uma mensagem de confirmação da remoção."""
-
-    produto_id = unquote(unquote(query.nome))
-
-    try:
-        session = Session()
-        count = session.query(Produto).filter(Produto.id == produto_id).delete()
-        session.commit()
     
-        if count:
-            return {"mesage": "Produto removido", "id": produto_id},
-        else:
+    produto_nome = unquote(unquote(query.nome))
+    logger.info(f"Deletando dados sobre produto #{produto_nome}")
+    # criando conexão com a base
+    session = Session()
+    # fazendo a remoção
+    count = session.query(Produto).filter(Produto.nome == produto_nome).delete()
+    session.commit()
+    
+    if count:
+        # retorna a representação da mensagem de confirmação
+        logger.info(f"Deletado produto #{produto_nome}")
+        return {"mesage": "Produto removido", "id": produto_nome}, 200
+    else:
         #se o produto não foi encontrado
-            return {"Produto não encontrado na base :( "}, 404
-    except Exception as e:
-            return {"Erro": "Erro ao deletar o rpduto"}, 409
+        error_msg = "Produto não encontrado na base :( "
+        logger.warning(f"Erro ao deletar produto #'{produto_nome}', {error_msg}")
+        return {"mesage": error_msg}, 404
     
 
 @app.get('/busca_produto', tags=[produto_tag],
@@ -123,15 +153,18 @@ def busca_produto(query: ProdutoBuscaPorNomeSchema):
     Retorna uma representação dos produtos.
     """
     termo = unquote(query.termo)
+    logger.info(f"Fazendo a busca por nome com o termo: {termo}")
+    # criando conexão com a base
     session = Session()
+    # fazendo a remoção
     produtos = session.query(Produto).filter(Produto.nome.ilike(f"%{termo}%")).all()
-
 
     if not produtos:
         # se não há produtos cadastrados
         return {"produtos": []}, 200
     else:
-        
+        logger.info(f"%d rodutos econtrados" % len(produtos))
+        # retorna a representação de produto
         return apresenta_produtos(produtos), 200
       
 

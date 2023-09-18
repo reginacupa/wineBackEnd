@@ -31,7 +31,8 @@ def to_dict(self):
         Retorna a representação em dicionário do Objeto Produto.
         """
         return{
-              
+            
+            "id": self.id,
             "nome": self.nome,
             "descricao": self.descricao,
             "preco": self.preco,
@@ -40,29 +41,11 @@ def to_dict(self):
             "quantidade": self.quantidade
         }
             
-            
-            
-            
-
-def to_dict(self):
-        """
-        Retorna a representação em dicionário do Objeto Produto.
-        """
-        return{
-              
-            "nome": self.nome,
-            "descricao": self.descricao,
-            "preco": self.preco,
-            "avaliacao": self.avaliacao,
-            "categoria": self.categoria,
-            "quantidade": self.quantidade
-        }
-
 def __repr__(self):
     """
     Retorna uma representação do Produto em forma de texto.
     """
-    return f"Producto(nome={self.nome}, descricao= {self.descricao}, preco= {self.preco}, avaliacao={self.avaliacao}, categoria={self.categoria}, quantidade= {self.quantidade})"
+    return f"Producto(id={self.id}, nome='{self.nome}', descricao= '{self.descricao}', preco= {self.preco}, avaliacao='{self.avaliacao}', categoria='{self.categoria}', quantidade= {self.quantidade})"
 
 
 
