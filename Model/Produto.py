@@ -15,15 +15,17 @@ class Produto(Base):
     avaliacao = Column(Float)
     categoria = Column(String(80))
     quantidade = Column(Integer)
+    imagem= Column(String)
     
 
-    def __init__(self, nome: str, descricao: str, preco: float, avaliacao: float, categoria: str, quantidade: int):
+    def __init__(self, nome: str, descricao: str, preco: float, avaliacao: float, categoria: str, quantidade: int, imagem: str):
         self.nome = nome
         self.descricao = descricao
         self.preco = preco
         self.avaliacao = avaliacao
         self.categoria = categoria
         self.quantidade = quantidade
+        self.imagem = imagem
     
 
 def to_dict(self):
@@ -38,14 +40,15 @@ def to_dict(self):
             "preco": self.preco,
             "avaliacao": self.avaliacao,
             "categoria": self.categoria,
-            "quantidade": self.quantidade
+            "quantidade": self.quantidade,
+            "imagem": self.imagem
         }
             
 def __repr__(self):
     """
     Retorna uma representação do Produto em forma de texto.
     """
-    return f"Producto(id={self.id}, nome='{self.nome}', descricao= '{self.descricao}', preco= {self.preco}, avaliacao='{self.avaliacao}', categoria='{self.categoria}', quantidade= {self.quantidade})"
+    return f"Producto(id={self.id}, nome='{self.nome}', descricao= '{self.descricao}', preco= {self.preco}, avaliacao='{self.avaliacao}', categoria='{self.categoria}', quantidade= {self.quantidade}, {self.imagem})"
 
 
 

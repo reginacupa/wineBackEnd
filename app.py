@@ -66,7 +66,8 @@ def add_produto(form: ProdutoSchema):
         preco=form.preco,
         avaliacao=form.avaliacao,
         categoria=form.categoria,
-        quantidade=form.quantidade
+        quantidade=form.quantidade,
+        imagem=form.imagem
     )
     logger.info(f"Adicionando produto de nome: '{produto.nome}'")
 
@@ -95,27 +96,6 @@ def add_produto(form: ProdutoSchema):
         return {"mesage": error_msg}, 409
 
 
-@app.get('/produto_id', tags=[produto_tag],
-         responses={"200": ProdutoViewSchema, "404": ErrorSchema})
-def get_produtoId(query: ProdutoBuscaPorIDSchema):
-    """Faz uma busca por um produto a partir do id do produto
-    Retorna uma apresentação dos produtos."""
-    produto_id = query.id
-    logger.info(f"Coletando dados sobre produto #{produto_id}")
-    # criando conexão com a base
-    session = Session()
-    # fazendo a busca
-    produto = session.query(Produto).filter(Produto.id == produto_id).first()
-
-    if not Produto:
-        # se o produto não foi encontrado
-        error_msg = "Produto não encontrado na base :( "
-        logger.warning(f"Erro ao buscar produto '{produto_id}', {error_msg}")
-        return {"mesage": error_msg}, 404
-    else:
-        logger.info("Produto econtrado: %s" % produto)
-        # retorna a representação de produto
-        return apresenta_produto(Produto), 200
 
 # funcionando
 @app.delete('/delete_produto', tags=[produto_tag],
@@ -182,7 +162,7 @@ def update_produto(query: ProdutoDelSchema,form: ProdutoUpdateSchema):
         categoria=form.categoria,
         quantidade=form.quantidade
     )
-    logger.info(f"Adicionando produto de nome: '{produto.nome}'")
+    logger.info(f"Alterado produto de nome: '{produto.nome}'")
 
     try:
         # criando conexão com a base
@@ -191,14 +171,14 @@ def update_produto(query: ProdutoDelSchema,form: ProdutoUpdateSchema):
         session.add(produto)
         # efetivando o camando de adição de novo item na tabela
         session.commit()
-        logger.info("Adicionado produto: %s" % produto)
+        logger.info("Alterado produto: %s" % produto)
         return apresenta_produto(produto), 200
 
     except Exception as e:
         # caso erro fora do previsto
-        error_msg = "Não foi possível cadastrar novo item  :("
+        error_msg = "Não foi possível alterar o item  :("
         logger.warning(
-            f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
+            f"Erro ao alterar produto '{produto.nome}', {error_msg}")
         return {"mesage": error_msg}, 400
 
     except IntegrityError as e:

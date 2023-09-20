@@ -33,7 +33,7 @@ itens=[
         "avaliacao": 8.8,
         "categoria": "Cabernet Sauavignon",
         "quantidade": 25,
-        "image": "https://cdn.mistral.com.br/products/35015/img_m_35015.png"
+        "imagem": "https://cdn.mistral.com.br/products/35015/img_m_35015.png"
 
         },
 

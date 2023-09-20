@@ -12,6 +12,7 @@ class ProdutoSchema(BaseModel):
     avaliacao: float = 8.8
     categoria: str = "Cabernet Sauavignon"
     quantidade:  int = 25
+    imagem: str = ("https://cdn.mistral.com.br/products/35015/img_m_35015.png")
 
 
 class ProdutoViewSchema(BaseModel):
@@ -24,6 +25,8 @@ class ProdutoViewSchema(BaseModel):
     avaliacao: float = 8.8
     categoria: str = "Cabernet Sauavignon"
     quantidade: Optional[int] = 25
+    imagem: str = ("https://cdn.mistral.com.br/products/35015/img_m_35015.png")
+
 
 
 class ProdutoBuscaSchema(BaseModel):
@@ -48,6 +51,7 @@ class ProdutoUpdateSchema(BaseModel):
     avaliacao: float = 8.8
     categoria: str = "Cabernet Sauavignon"
     quantidade:  int = 25
+    imagem: str = ("https://cdn.mistral.com.br/products/35015/img_m_35015.png")
 
 
 def apresenta_produtos(produtos: List[Produto]):
@@ -63,7 +67,8 @@ def apresenta_produtos(produtos: List[Produto]):
             "preco": produto.preco,
             "avaliacao": produto.avaliacao,
             "categoria": produto.categoria,
-            "quantidade": produto.quantidade
+            "quantidade": produto.quantidade,
+            "imagem": produto.imagem        
 
         })
 
@@ -104,6 +109,7 @@ def apresenta_produto(produto: Produto):
         "preco": produto.preco,
         "avaliacao": produto.avaliacao,
         "categoria": produto.categoria,
-        "quantidade": produto.quantidade
+        "quantidade": produto.quantidade,
+        "imagem": produto.imagem
 
     }
