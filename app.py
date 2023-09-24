@@ -18,21 +18,27 @@ CORS(app)
 
 
 # Definindo as tags
-home_tag = Tag(name="Documentação",
-               description="Descrição de documentação: Swagger")
+home_tag = Tag(name="Documentação", description="Descrição de documentação: Swagger")
 
 produto_tag = Tag(
-    name="Produto", description="Cadastro, visualização e remoção de produtos à base")
+    name="Produto", description="Cadastro, visualização e remoção de produtos à base"
+)
 
 
-@app.get('/', tags=[home_tag])
+@app.get("/", tags=[home_tag])
 def home():
     """Redireciona para /openapi, tela que permite a escolha do estilo de documentação."""
-    return redirect('/openapi')
+    return redirect("/openapi")
 
-#funcionando
-@app.get('/produtos', tags=[produto_tag],
-         responses={"200": ListagemProdutosSchema, "404": ErrorSchema})
+
+# funcionando
+
+
+@app.get(
+    "/produtos",
+    tags=[produto_tag],
+    responses={"200": ListagemProdutosSchema, "404": ErrorSchema},
+)
 def get_produtos():
     """Faz a busca por todos os produtos cadastrados
     Retorna uma apresentação da listagem de produtos."""
@@ -53,8 +59,11 @@ def get_produtos():
 
 
 # funcionando
-@app.post('/post_produto', tags=[produto_tag],
-          responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
+@app.post(
+    "/post_produto",
+    tags=[produto_tag],
+    responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema},
+)
 def add_produto(form: ProdutoSchema):
     """Cadastra um novo Produto à base de dados"""
     """Retorna uma apresentação dos produtos"""
@@ -67,7 +76,7 @@ def add_produto(form: ProdutoSchema):
         avaliacao=form.avaliacao,
         categoria=form.categoria,
         quantidade=form.quantidade,
-        imagem=form.imagem
+        imagem=form.imagem,
     )
     logger.info(f"Adicionando produto de nome: '{produto.nome}'")
 
@@ -84,22 +93,22 @@ def add_produto(form: ProdutoSchema):
     except Exception as e:
         # caso erro fora do previsto
         error_msg = "Não foi possível cadastrar novo item  :("
-        logger.warning(
-            f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
+        logger.warning(f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
         return {"mesage": error_msg}, 400
 
     except IntegrityError as e:
         # duplicidade do nome é a provavel razão do IntegrityError
         error_msg = "Produto de mesmo nome e categoria já salvo na base  :/ "
-        logger.warning(
-            f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
+        logger.warning(f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
         return {"mesage": error_msg}, 409
 
 
-
 # funcionando
-@app.delete('/delete_produto', tags=[produto_tag],
-            responses={"200": ProdutoDelSchema, "404": ErrorSchema})
+@app.delete(
+    "/delete_produto",
+    tags=[produto_tag],
+    responses={"200": ProdutoDelSchema, "404": ErrorSchema},
+)
 def del_produto(query: ProdutoBuscaPorIDSchema):
     """Deleta um produto a partir do id informado
     Retorna uma mensagem de confirmação da remoção."""
@@ -122,21 +131,28 @@ def del_produto(query: ProdutoBuscaPorIDSchema):
         logger.warning(f"Erro ao deletar produto #'{produto_id}', {error_msg}")
         return {"mesage": error_msg}, 404
 
+
 # Funcionando
-@app.get('/busca_produto', tags=[produto_tag],
-         responses={"200": ListagemProdutosSchema, "404": ErrorSchema})
+
+
+@app.get(
+    "/busca_produto",
+    tags=[produto_tag],
+    responses={"200": ListagemProdutosSchema, "404": ErrorSchema},
+)
 def busca_produto(query: ProdutoBuscaPorNomeSchema):
     """Faz a busca por produtos em que o termo passando  Produto a partir do nome do produto
 
     Retorna uma representação dos produtos.
     """
-    termo = unquote(query.termo)
-    logger.info(f"Fazendo a busca por nome com o termo: {termo}")
+    categoria = query.categoria
+    logger.info(f"Fazendo a busca por nome com o termo: {categoria}")
     # criando conexão com a base
     session = Session()
     # fazendo a remoção
-    produtos = session.query(Produto).filter(
-        Produto.nome.ilike(f"%{termo}%")).all()
+    produtos = (
+        session.query(Produto).filter(Produto.categoria.ilike(f"%{categoria}%")).all()
+    )
 
     if not produtos:
         # se não há produtos cadastrados
@@ -145,50 +161,46 @@ def busca_produto(query: ProdutoBuscaPorNomeSchema):
         logger.info(f"%d rodutos econtrados" % len(produtos))
         # retorna a representação de produto
         return apresenta_produtos(produtos), 200
-    
 
-@app.put('/put_produto', tags=[produto_tag],
-          responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema})
-def update_produto(query: ProdutoDelSchema,form: ProdutoUpdateSchema):
-    """Alterar Produto à base de dados"""
-    """Retorna uma apresentação dos produtos"""
 
-    print(form)
-    produto = Produto(
-        nome=form.nome,
-        descricao=form.descricao,
-        preco=form.preco,
-        avaliacao=form.avaliacao,
-        categoria=form.categoria,
-        quantidade=form.quantidade
+@app.put(
+    "/produto",
+    tags=[produto_tag],
+    responses={"200": ProdutoSchemaId, "404": ErrorSchema},
+)
+def update_produto(query: ProdutoSchemaId, form: ProdutoUpdateSchema):
+    """Edita um Produto a partir do id informado
+
+    Retorna uma mensagem de confirmação da edição.
+    """
+    produto_id = query.id
+    Stringpi = str(produto_id)
+    logger.debug(f"Editando dados sobre produto #{Stringpi}")
+    # criando conexão com a base
+    session = Session()
+    # fazendo a remoção
+    count = (
+        # Produto.nome == produto_nome).first()
+        session.query(Produto)
+        .filter(Produto.id == produto_id)
+        .first()
     )
-    logger.info(f"Alterado produto de nome: '{produto.nome}'")
+    count.nome = form.nome
+    count.descricao = form.descricao
+    count.preco = form.preco
+    count.avaliacao = form.avaliacao
+    count.categoria = form.categoria
+    count.quantidade = form.quantidade
+    count.imagem = form.imagem
 
-    try:
-        # criando conexão com a base
-        session = Session()
-        # adicionando produto
-        session.add(produto)
-        # efetivando o camando de adição de novo item na tabela
-        session.commit()
-        logger.info("Alterado produto: %s" % produto)
-        return apresenta_produto(produto), 200
+    print("nome")
+    print(count.id)
+    print(count.valor)
+    print(count.nome)
+    print(count.quantidade)
 
-    except Exception as e:
-        # caso erro fora do previsto
-        error_msg = "Não foi possível alterar o item  :("
-        logger.warning(
-            f"Erro ao alterar produto '{produto.nome}', {error_msg}")
-        return {"mesage": error_msg}, 400
-
-    except IntegrityError as e:
-        # duplicidade do nome é a provavel razão do IntegrityError
-        error_msg = "Produto de mesmo nome e categoria já salvo na base  :/ "
-        logger.warning(
-            f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
-        return {"mesage": error_msg}, 409
-
-
+    session.commit()
+    return apresenta_produto(count), 200
 
 
 if __name__ == "__main__":

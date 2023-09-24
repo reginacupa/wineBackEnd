@@ -86,7 +86,7 @@ class ProdutoBuscaPorNomeSchema(BaseModel):
     """ Define como deve ser a estrutura que representa a busca. Que será
         feita apenas com base no nome do produto.
     """
-    termo: str = "Malbec"
+    categoria: str = "Malbec"
 
 
 class ProdutoDelSchema(BaseModel):
@@ -113,3 +113,10 @@ def apresenta_produto(produto: Produto):
         "imagem": produto.imagem
 
     }
+
+class ProdutoSchemaId(BaseModel):
+    """Define como deve ser a estrutura que representa a busca. Que será
+    feita apenas com base no nome do produto.
+    """
+
+    id: int = 1
