@@ -3,16 +3,20 @@ from typing import Optional, List
 from Model.Produto import Produto
 
 
+from pydantic import BaseModel
+from typing import Optional, List
+from Model.Produto import Produto
+
+
 class ProdutoSchema(BaseModel):
     """ Define como um novo produto a ser inserido deve ser representado
     """
-    nome: str = "Montes Alpha - Cabernet Sauavignon"
-    descricao:  str = "Verdadeiro clássico da América do Sul, o Montes Alpha foi o primeiro grande tinto chileno, inspirado nos melhores vinhos de Bordeaux.  Um vinho excelente, de imbatível relação qualidade/preço"
-    preco: float = "259.23"
-    avaliacao: float = 8.8
+    nome: str = "Montes Alpha"
+    descricao: str = "Verdadeiro clássico da América do Sul, o Montes Alpha foi o primeiro grande tinto chileno, inspirado nos melhores vinhos de Bordeaux.  Um vinho excelente, de imbatível relação qualidade/preço"
+    preco: float = 259.23
+    Avaliacao: float = 8.8
     categoria: str = "Cabernet Sauavignon"
-    quantidade:  int = 25
-    imagem: str = ("https://cdn.mistral.com.br/products/35015/img_m_35015.png")
+    quantidade: Optional[int] = 25
 
 
 class ProdutoViewSchema(BaseModel):

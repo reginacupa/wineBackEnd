@@ -17,6 +17,7 @@ app = OpenAPI(__name__, info=info)
 CORS(app)
 
 
+
 # Definindo as tags
 home_tag = Tag(name="Documentação", description="Descrição de documentação: Swagger")
 
@@ -30,8 +31,6 @@ def home():
     """Redireciona para /openapi, tela que permite a escolha do estilo de documentação."""
     return redirect("/openapi")
 
-
-# funcionando
 
 
 @app.get(
@@ -56,14 +55,15 @@ def get_produtos():
         logger.info(f"%d produtos encontrados" % len(produtos))
         # retorna a representação de produto
         return apresenta_produtos(produtos), 200
+    
 
 
-# funcionando
 @app.post(
     "/post_produto",
     tags=[produto_tag],
     responses={"200": ProdutoViewSchema, "409": ErrorSchema, "400": ErrorSchema},
 )
+
 def add_produto(form: ProdutoSchema):
     """Cadastra um novo Produto à base de dados"""
     """Retorna uma apresentação dos produtos"""
@@ -103,12 +103,13 @@ def add_produto(form: ProdutoSchema):
         return {"mesage": error_msg}, 409
 
 
-# funcionando
+
 @app.delete(
     "/delete_produto",
     tags=[produto_tag],
     responses={"200": ProdutoDelSchema, "404": ErrorSchema},
 )
+
 def del_produto(query: ProdutoBuscaPorIDSchema):
     """Deleta um produto a partir do id informado
     Retorna uma mensagem de confirmação da remoção."""
@@ -131,8 +132,6 @@ def del_produto(query: ProdutoBuscaPorIDSchema):
         logger.warning(f"Erro ao deletar produto #'{produto_id}', {error_msg}")
         return {"mesage": error_msg}, 404
 
-
-# Funcionando
 
 
 @app.get(
@@ -158,7 +157,7 @@ def busca_produto(query: ProdutoBuscaPorNomeSchema):
         # se não há produtos cadastrados
         return {"produtos": []}, 200
     else:
-        logger.info(f"%d rodutos econtrados" % len(produtos))
+        logger.info(f"%d produtos encontrados" % len(produtos))
         # retorna a representação de produto
         return apresenta_produtos(produtos), 200
 
@@ -194,8 +193,6 @@ def update_produto(query: ProdutoSchemaId, form: ProdutoUpdateSchema):
     count.imagem = form.imagem
 
     print("nome")
-    print(count.id)
-    print(count.valor)
     print(count.nome)
     print(count.quantidade)
 
