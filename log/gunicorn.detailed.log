@@ -1,63 +1,56 @@
-[2023-09-26 09:49:42,344] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+[2023-09-27 14:50:41,328] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.0.125:5000 - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 09:49:42,358] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 09:49:42,365] INFO  * Restarting with stat - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 09:49:58,131] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 09:49:58,146] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 09:49:58,150] INFO 127.0.0.1 - - [26/Sep/2023 09:49:58] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:35:51,987] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:35:52,064] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:35:52,068] INFO 127.0.0.1 - - [26/Sep/2023 10:35:52] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:36:42,060] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:36:42,068] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:36:42,072] INFO 127.0.0.1 - - [26/Sep/2023 10:36:42] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:40:20,571] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:40:20,603] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:40:20,603] INFO 127.0.0.1 - - [26/Sep/2023 10:40:20] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:40:23,861] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:40:23,861] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:40:23,864] INFO 127.0.0.1 - - [26/Sep/2023 10:40:23] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:42:01,898] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:42:01,898] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:42:01,898] INFO 127.0.0.1 - - [26/Sep/2023 10:42:01] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:42:12,884] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:42:12,884] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:42:12,884] INFO 127.0.0.1 - - [26/Sep/2023 10:42:12] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:42:29,880] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:42:29,880] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:42:29,880] INFO 127.0.0.1 - - [26/Sep/2023 10:42:29] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:42:46,261] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:42:46,264] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:42:46,264] INFO 127.0.0.1 - - [26/Sep/2023 10:42:46] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:45:03,898] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:45:03,898] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:45:03,901] INFO 127.0.0.1 - - [26/Sep/2023 10:45:03] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:45:04,891] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:45:04,891] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:45:04,891] INFO 127.0.0.1 - - [26/Sep/2023 10:45:04] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:45:08,885] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:45:08,885] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:45:08,885] INFO 127.0.0.1 - - [26/Sep/2023 10:45:08] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:45:17,892] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:45:17,892] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:45:17,892] INFO 127.0.0.1 - - [26/Sep/2023 10:45:17] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:45:23,884] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:45:23,884] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:45:23,884] INFO 127.0.0.1 - - [26/Sep/2023 10:45:23] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:45:28,885] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:45:28,887] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:45:28,888] INFO 127.0.0.1 - - [26/Sep/2023 10:45:28] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:45:37,841] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:45:37,841] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:45:37,841] INFO 127.0.0.1 - - [26/Sep/2023 10:45:37] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:46:25,066] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:46:25,069] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:46:25,070] INFO 127.0.0.1 - - [26/Sep/2023 10:46:25] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:48:25,414] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:48:25,414] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:48:25,414] INFO 127.0.0.1 - - [26/Sep/2023 10:48:25] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
-[2023-09-26 10:48:28,657] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
-[2023-09-26 10:48:28,657] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
-[2023-09-26 10:48:28,657] INFO 127.0.0.1 - - [26/Sep/2023 10:48:28] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:41,332] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:41,336] INFO  * Restarting with stat - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:49,978] INFO 127.0.0.1 - - [27/Sep/2023 14:50:49] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:50,427] INFO 127.0.0.1 - - [27/Sep/2023 14:50:50] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:50,520] INFO 127.0.0.1 - - [27/Sep/2023 14:50:50] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:50,871] INFO 127.0.0.1 - - [27/Sep/2023 14:50:50] "GET /openapi/static/images/redoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:50,873] INFO 127.0.0.1 - - [27/Sep/2023 14:50:50] "GET /openapi/static/images/rapidoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:50,898] INFO 127.0.0.1 - - [27/Sep/2023 14:50:50] "GET /openapi/static/images/swagger.svg HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:57,800] INFO 127.0.0.1 - - [27/Sep/2023 14:50:57] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:57,850] INFO 127.0.0.1 - - [27/Sep/2023 14:50:57] "GET /openapi/static/css/swagger-ui.css HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:57,901] INFO 127.0.0.1 - - [27/Sep/2023 14:50:57] "GET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:58,000] INFO 127.0.0.1 - - [27/Sep/2023 14:50:58] "GET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:50:58,138] INFO 127.0.0.1 - - [27/Sep/2023 14:50:58] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:51:20,760] INFO Fazendo a busca por nome com o termo: cabernet - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L148 
+[2023-09-27 14:51:20,773] INFO 3 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L160 
+[2023-09-27 14:51:20,775] INFO 127.0.0.1 - - [27/Sep/2023 14:51:20] "GET /busca_produto?categoria=cabernet HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 14:52:36,354] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
+[2023-09-27 14:52:36,356] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
+[2023-09-27 14:52:36,359] INFO 127.0.0.1 - - [27/Sep/2023 14:52:36] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 15:05:56,288] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
+[2023-09-27 15:05:56,306] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
+[2023-09-27 15:05:56,311] INFO 127.0.0.1 - - [27/Sep/2023 15:05:56] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 17:00:00,745] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
+[2023-09-27 17:00:00,793] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
+[2023-09-27 17:00:00,801] INFO 127.0.0.1 - - [27/Sep/2023 17:00:00] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 17:19:39,365] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
+[2023-09-27 17:19:39,386] INFO 6 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L55  
+[2023-09-27 17:19:39,394] INFO 127.0.0.1 - - [27/Sep/2023 17:19:39] "GET /produtos HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:30,341] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.125:5000 - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:30,342] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:30,345] INFO  * Restarting with stat - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:37,100] INFO 127.0.0.1 - - [27/Sep/2023 18:09:37] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:37,179] INFO 127.0.0.1 - - [27/Sep/2023 18:09:37] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:37,368] INFO 127.0.0.1 - - [27/Sep/2023 18:09:37] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:37,368] INFO 127.0.0.1 - - [27/Sep/2023 18:09:37] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:37,369] INFO 127.0.0.1 - - [27/Sep/2023 18:09:37] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:38,814] INFO 127.0.0.1 - - [27/Sep/2023 18:09:38] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:38,868] INFO 127.0.0.1 - - [27/Sep/2023 18:09:38] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:38,889] INFO 127.0.0.1 - - [27/Sep/2023 18:09:38] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:38,993] INFO 127.0.0.1 - - [27/Sep/2023 18:09:38] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:39,090] INFO 127.0.0.1 - - [27/Sep/2023 18:09:39] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:09:53,742] INFO Fazendo a busca por nome com o termo: Malbec - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L148 
+[2023-09-27 18:09:53,765] INFO 2 produtos encontrados - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L160 
+[2023-09-27 18:09:53,765] INFO 127.0.0.1 - - [27/Sep/2023 18:09:53] "GET /busca_produto?categoria=Malbec HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:10:28,019] INFO Deletando dados sobre produto #4 - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L118 
+[2023-09-27 18:10:28,033] INFO Deletado produto #4 - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L127 
+[2023-09-27 18:10:28,034] INFO 127.0.0.1 - - [27/Sep/2023 18:10:28] "DELETE /delete_produto?id=4 HTTP/1.1" 200 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:10:50,621] INFO 127.0.0.1 - - [27/Sep/2023 18:10:50] "[35m[1mPOST /post_produto HTTP/1.1[0m" 500 - - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\env\Lib\site-packages\werkzeug\_internal.py L187 
+[2023-09-27 18:12:37,462] INFO Coletando produtos  - call_trace=C:\Users\regin\OneDrive\Desktop\Agonia\backBuyWine\wineBackEnd\app.py L45  
